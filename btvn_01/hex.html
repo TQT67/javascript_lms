@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyển đổi mã hex sang nhị phân</title>
+</head>
+
+<body>
+    <h1>Xem kết quả trong console</h1>
+    <script>
+        function toBinary(hex) {
+            let binary = "";
+            let num = parseInt(hex, 16);
+
+            while (num > 0) {
+                let remainder = num % 2;
+                binary = remainder + binary;
+                num = Math.floor(num / 2);
+            }
+
+            return binary;
+        }
+
+        console.log(toBinary("FF"));
+        console.log(toBinary("AA"));
+        console.log(toBinary("FA"));
+    </script>
+</body>
+
+</html>

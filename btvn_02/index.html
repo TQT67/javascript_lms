@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viết hàm</title>
+</head>
+
+<body>
+    <script>
+        function canNest(arr1, arr2) {
+            let isNested = true;
+
+            if (Math.min(...arr1) > Math.min(...arr2) && Math.max(...arr1) < Math.max(...arr2)) {
+                for (let i = 0; i < arr1.length; i++) {
+                    if (arr1[i] < arr2[0] || arr1[i] > arr2[arr2.length - 1]) {
+                        isNested = false;
+                        break;
+                    }
+                }
+            } else {
+                isNested = false;
+            }
+
+            console.log(isNested);
+        }
+
+        canNest([1, 2, 3, 4], [0, 10]);
+        canNest([3, 1], [6, 0]);
+        canNest([1, 2, 3], [2, 3]);
+        canNest([2, 3, 4], [1, 5]);
+    </script>
+</body>
+
+</html>
